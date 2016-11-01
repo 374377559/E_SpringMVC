@@ -3,6 +3,9 @@ package cn.web.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Student implements Serializable{
@@ -12,6 +15,8 @@ public class Student implements Serializable{
 		@DateTimeFormat(pattern="yyyy-MM-dd")
 		private Date sdate;
 		
+		//学生关联班级，多对一
+		private StuCls cls ;
 		
 		public int getSids() {
 			return sids;
@@ -37,5 +42,14 @@ public class Student implements Serializable{
 		public void setSdate(Date sdate) {
 			this.sdate = sdate;
 		}
+		
+		
+		public StuCls getCls() {
+			return cls;
+		}
+		public void setCls(StuCls cls) {
+			this.cls = cls;
+		}
+		
 			
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cn.web.entity.Student" table="STUDENT">
+        <id name="sids" type="int">
+            <column name="SIDS" />
+            <generator class="native" />
+        </id>
+        <property name="sname" />
+        <property name="scls" />
+        <property name="sdate" type="java.util.Date"/>
+        <many-to-one name="cls" column="clsid" class="cn.web.entity.StuCls" fetch="join"/>
+    </class>
+</hibernate-mapping>
